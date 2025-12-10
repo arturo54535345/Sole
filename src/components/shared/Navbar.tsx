@@ -24,7 +24,7 @@ const Navbar = () => {
         mx-auto 
         p-4">
         
-        {/* --- LOGO --- */}
+        {/*LOGO*/}
         <a href="https://flowbite.com/" className="
           flex 
           items-center 
@@ -41,7 +41,7 @@ const Navbar = () => {
             </span>
         </a>
 
-        {/* --- BOTONES DERECHA --- */}
+        {/* BOTONES DERECHA  */}
         <div className="
           flex 
           md:order-2 
@@ -51,7 +51,7 @@ const Navbar = () => {
             
             {/* Botón Comencemos */}
             <button type="button" className="
-              text-black
+              text-white
               bg-white/10              
               backdrop-blur-md         
               border border-white/30

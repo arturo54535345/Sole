@@ -4,7 +4,7 @@ import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 export function ReviewsCarousel() {
   return (
     
-    <div className="h-full w-full rounded-md flex flex-col antialiased bg-transparent items-center justify-center relative overflow-hidden">
+    <div className="h-full w-auto flex flex-col antialiased bg-transparent items-center justify-center relative overflow-hidden ">
       <InfiniteMovingCards
         items={imagenesDelCamino} 
         direction="right"

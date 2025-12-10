@@ -74,41 +74,68 @@ export const InfiniteMovingCards = ({
     }
   };
   
-  return (
+ return (
     <div
       ref={containerRef}
+      
       className={cn(
-        
-        "scroller relative z-20 max-w-7xl overflow-hidden",
-        className,
+        "scroller relative z-20 w-full overflow-hidden rounded-3xl",
+        className
       )}
     >
       <ul
         ref={scrollerRef}
         className={cn(
-          "flex w-max min-w-full shrink-0 flex-nowrap gap-4 ñ",
+          "flex w-max min-w-full shrink-0 flex-nowrap gap-4",
           start && "animate-scroll",
-          pauseOnHover && "hover:[animation-play-state:paused]",
+          pauseOnHover && "hover:[animation-play-state:run]"
         )}
       >
         {items.map((item, idx) => (
           <li
-            
-            className="w-auto h-[300px] max-w-full relative rounded-2xl flex-shrink-0 overflow-hidden"
-            key={item.image + idx} 
+            // LIMPIO: Sin bordes, fondo transparente.
+            className="w-auto h-[300px] max-w-full relative flex-shrink-0 border-none bg-transparent"
+            key={item.image + idx}
           >
             <div className="relative w-auto h-full">
               <img 
                 src={item.image} 
                 alt={item.alt || "Imagen del camino"} 
-                className="w-auto h-full object-cover rounded-2xl pointer-events-none" 
+                className="block w-auto h-full object-cover pointer-events-none rounded-3xl" 
               />
-              
-              <div className="absolute inset-0 shadow-inner rounded-2xl"></div>
             </div>
           </li>
         ))}
       </ul>
+
+      {/* --- AQUÍ ESTÁ LA SOLUCIÓN ROBUSTA --- */}
+
+      {/* CORTINA IZQUIERDA */}
+      <div 
+        className="absolute inset-y-0 left-0 z-50 pointer-events-none rounded-3xl"
+        style={{
+          width: '100px', // Ancho fijo para asegurarnos de que se ve
+          background: 'linear-gradient(to right, rgba(255,255,255,0.2), transparent)', // Un toque de luz
+          backdropFilter: 'blur(8px)', // Desenfoque forzado por CSS puro
+          WebkitBackdropFilter: 'blur(8px)', // Para navegadores Safari/Chrome antiguos
+          maskImage: 'linear-gradient(to right, black 20%, transparent)', // Máscara suave
+          WebkitMaskImage: 'linear-gradient(to right, black 20%, transparent)'
+        }}
+      ></div>
+
+      {/* CORTINA DERECHA */}
+      <div 
+        className="absolute inset-y-0 right-0 z-50 pointer-events-none rounded-3xl"
+        style={{
+          width: '100px',
+          background: 'linear-gradient(to left, rgba(255,255,255,0.2), transparent)',
+          backdropFilter: 'blur(8px)',
+          WebkitBackdropFilter: 'blur(8px)',
+          maskImage: 'linear-gradient(to left, black 20%, transparent)',
+          WebkitMaskImage: 'linear-gradient(to left, black 20%, transparent)'
+        }}
+      ></div>
+
     </div>
   );
 };

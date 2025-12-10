@@ -42,32 +42,22 @@ const AboutSection = () => {
             {/* Contenedor */}
             <div className="
               relative z-10 w-full h-full 
-              shadow-2xl 
               overflow-hidden   
               rounded-3xl       
               bg-gray-100
-              p
+              
             ">
               <ReviewsCarousel />
             </div>
-
-            {/* Decoración detrás */}
-            <div className="
-            absolute -top-10 -right-10 w-40 h-40
-            bg-green-200 
-            rounded-full 
-            blur-3xl -z-10
-            ">
-            
-            </div>
+        
             <div className="
             absolute -bottom-10 -left-10 w-40 h-40
             bg-blue-200
             rounded-full
             blur-3xl -z-10
+            rounded 3-xl
             "
             >
-            
             </div>
 
           </div>

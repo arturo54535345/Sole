@@ -31,7 +31,21 @@ const HeroSection = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button 
             onClick={() => navigate('/kits')}
-            className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full transition-transform hover:scale-105 shadow-lg"
+            className="
+            text-white
+            bg-white/10              
+            backdrop-blur-md         
+            border border-white/30
+            hover:bg-white/20        
+            focus:ring-4 focus:outline-none focus:ring-white/60
+            font-medium
+            rounded-full
+            text-lg
+            px-8
+            py-3
+            text-center 
+            transition-transform hover:scale-105
+            shadow-lg"
           >
             Ver Kits
           </button>
@@ -39,18 +53,20 @@ const HeroSection = () => {
           <button 
             onClick={() => navigate('/about')}
             className="
-            text-black
+            text-white
             bg-white/10              
             backdrop-blur-md         
             border border-white/30
             hover:bg-white/20        
             focus:ring-4 focus:outline-none focus:ring-white/60
-            font-medium rounded-lg
+            font-medium
+            rounded-full
             text-lg
             px-8
             py-3
             text-center 
-            transition-all"
+            transition-transform hover:scale-105
+            shadow-lg"
             
           >
             Saber más

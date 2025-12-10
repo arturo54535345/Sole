@@ -21,14 +21,20 @@ const Navbar = () => {
             
             {/* Botón "Comencemos" translúcido */}
             <button type="button" className="
-              text-black
-              bg-white/10              
-              backdrop-blur-md         
-              border border-white/30   
-              hover:bg-white/20        
-              focus:ring-4 focus:outline-none focus:ring-white/30 
-              font-medium rounded-lg text-sm px-4 py-2 text-center 
-              transition-all"
+            text-white
+            bg-white/10              
+            backdrop-blur-md         
+            border border-white/30
+            hover:bg-white/20        
+            focus:ring-4 focus:outline-none focus:ring-white/60
+            font-medium
+            rounded-full
+            text-medium
+            px-4
+            py-2
+            text-center 
+            transition-transform hover:scale-105
+            shadow-lg"
             >
               Comencemos
             </button>
@@ -48,10 +54,10 @@ const Navbar = () => {
             </button>
         </div>
 
-        {/* --- LISTA DE ENLACES (Aquí estaba el error) --- */}
+        
         <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
           
-          {/* HE LIMPIADO ESTA ETIQUETA <ul> PARA QUITAR EL FONDO Y BORDES */}
+          
           <ul className="
             flex flex-col p-4 md:p-0 mt-4 
             font-medium 
@@ -61,31 +67,66 @@ const Navbar = () => {
           ">
             
             <li>
-              <a href="#" className="block py-2 px-3 text-white rounded-md md:bg-transparent md:text-blue-400 md:p-0" aria-current="page">
-                Home
+              <a href="#" className="
+              block py-2 px-3
+              text-white
+              rounded-md
+              md:bg-transparent
+              md:text-green-600
+              md:p-0
+              " aria-current="page">
+              Home
               </a>
             </li>
 
             <li>
-              <a href="#" className="block py-2 px-3 text-white rounded-md hover:text-blue-300 md:hover:bg-transparent md:p-0 transition-colors">
+              <a href="#" className="
+              block py-2 px-3
+              text-white
+              rounded-md 
+              hover:text-green-600
+              md:hover:bg-transparent 
+              md:p-0
+              transition-colors">
                 Sobre nosotros
               </a>
             </li>
 
             <li>
-              <a href="#" className="block py-2 px-3 text-white rounded-md hover:text-blue-300 md:hover:bg-transparent md:p-0 transition-colors">
+              <a href="#" className="
+              block py-2 px-3
+              text-white 
+              rounded-md
+              hover:text-green-600
+              md:hover:bg-transparent
+              md:p-0
+              transition-colors">
                 Tienda
               </a>
             </li>
 
             <li>
-              <a href="#" className="block py-2 px-3 text-white rounded-md hover:text-blue-300 md:hover:bg-transparent md:p-0 transition-colors">
+              <a href="#" className="
+              block py-2 px-3
+              text-white 
+              rounded-md
+              hover:text-green-600
+              md:hover:bg-transparent
+              md:p-0
+              transition-colors">
                 Kits
               </a>
             </li>
 
             <li>
-              <a href="#" className="block py-2 px-3 text-white rounded-md hover:text-blue-300 md:hover:bg-transparent md:p-0 transition-colors">
+              <a href="#" className="
+              block py-2 px-3 
+              text-white
+              rounded-md
+              hover:text-green-600
+              md:hover:bg-transparent
+              md:p-0
+              transition-colors">
                 Contactanos
               </a>
             </li>

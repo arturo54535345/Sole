@@ -15,10 +15,10 @@ const HeroSection = () => {
         style={{ backgroundImage: "url('https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=2070&auto=format&fit=crop')" }}
       ></div>
 
-      {/* CAPA OSCURA (Para que se lea el texto blanco) */}
+      {/* CAPA OSCURA*/}
       <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
 
-      {/*  CONTENIDO (Texto y Botones) */}
+      {/*  CONTENIDO */}
       <div className="relative z-20 px-4 max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
           Tu Camino comienza aquí

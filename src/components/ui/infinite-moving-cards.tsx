@@ -86,7 +86,7 @@ export const InfiniteMovingCards = ({
       <ul
         ref={scrollerRef}
         className={cn(
-          "flex w-max min-w-full shrink-0 flex-nowrap gap-4 py-4",
+          "flex w-max min-w-full shrink-0 flex-nowrap gap-4 ñ",
           start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]",
         )}
@@ -94,14 +94,14 @@ export const InfiniteMovingCards = ({
         {items.map((item, idx) => (
           <li
             
-            className="w-[300px] h-[300px] max-w-full relative rounded-2xl flex-shrink-0 md:w-[400px] overflow-hidden"
-            key={item.image + idx} // Clave única segura
+            className="w-auto h-[300px] max-w-full relative rounded-2xl flex-shrink-0 overflow-hidden"
+            key={item.image + idx} 
           >
-            <div className="relative w-full h-full">
+            <div className="relative w-auto h-full">
               <img 
                 src={item.image} 
                 alt={item.alt || "Imagen del camino"} 
-                className="w-full h-full object-cover rounded-2xl pointer-events-none" 
+                className="w-auto h-full object-cover rounded-2xl pointer-events-none" 
               />
               
               <div className="absolute inset-0 shadow-inner rounded-2xl"></div>

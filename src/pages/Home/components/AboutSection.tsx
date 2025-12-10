@@ -46,6 +46,7 @@ const AboutSection = () => {
               overflow-hidden   
               rounded-3xl       
               bg-gray-100
+              p
             ">
               <ReviewsCarousel />
             </div>

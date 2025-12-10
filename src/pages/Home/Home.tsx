@@ -2,7 +2,6 @@ import React from 'react';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 
-// Más adelante importaremos aquí AboutPreview, KitsPreview, etc.
 
 const Home = () => {
   return (

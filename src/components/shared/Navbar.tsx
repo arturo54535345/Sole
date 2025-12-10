@@ -7,59 +7,37 @@ const Navbar = () => {
   }, []);
 
   return (
-    // CAMBIO 1: bg-neutral-primary -> bg-white
-    <nav className="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200">
+    <nav className="bg-transparent fixed w-full z-20 top-0 start-0">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         
-        {/* LOGO */}
+        {/* --- LOGO --- */}
         <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="https://flowbite.com/docs/images/logo.svg" className="h-7" alt="Flowbite Logo" />
-            {/* CAMBIO 2: text-heading -> text-black */}
-            <span className="self-center text-xl font-semibold whitespace-nowrap text-black">Flowbite</span>
+            <span className="self-center text-xl font-semibold whitespace-nowrap text-white">Sole</span>
         </a>
 
-        {/* BOTONES DERECHA */}
-        <div className="
-        flex md:order-2 
-        space-x-3
-        md:space-x-0 
-        rtl:space-x-reverse"
-        >
-            {/* CAMBIO 3: bg-brand -> bg-blue-700 (Azul estándar) */}
-            <button type="button" className="text-white
-            bg-blue-700
-            hover:bg-blue-800
-            focus:ring-4
-            focus:outline-none
-            focus:ring-blue-300
-            font-medium
-            rounded-lg
-            text-sm
-            px-4 
-            py-2 
-            text-center 
-            shadow-lg">
-              Get started
+        {/* --- BOTONES DERECHA --- */}
+        <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            
+            {/* Botón "Comencemos" translúcido */}
+            <button type="button" className="
+              text-black
+              bg-white/10              
+              backdrop-blur-md         
+              border border-white/30   
+              hover:bg-white/20        
+              focus:ring-4 focus:outline-none focus:ring-white/30 
+              font-medium rounded-lg text-sm px-4 py-2 text-center 
+              transition-all"
+            >
+              Comencemos
             </button>
             
-            {/* BOTÓN MÓVIL (Hamburguesa) */}
+            {/* Botón Menú Móvil (Hamburguesa) */}
             <button 
               data-collapse-toggle="navbar-sticky" 
               type="button" 
-              className="inline-flex
-            items-center
-            p-2
-            w-10
-            h-10
-            justify-center
-            text-sm
-            text-gray-500
-            rounded-lg 
-            md:hidden
-            hover:bg-gray-100
-            focus:outline-none
-            focus:ring-2
-            focus:ring-gray-200" 
+              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gray-200" 
               aria-controls="navbar-sticky" 
               aria-expanded="false"
             >
@@ -70,91 +48,51 @@ const Navbar = () => {
             </button>
         </div>
 
-        {/* ENLACES DEL MENÚ */}
-        <div className="
-        items-center
-        justify-between
-        hidden w-full
-        md:flex
-        md:w-auto 
-        md:order-1
-        " id="navbar-sticky">
+        {/* --- LISTA DE ENLACES (Aquí estaba el error) --- */}
+        <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+          
+          {/* HE LIMPIADO ESTA ETIQUETA <ul> PARA QUITAR EL FONDO Y BORDES */}
           <ul className="
-        flex flex-col p-4
-        md:p-0 mt-4 
-        font-medium
-        border border-gray-100 
-        rounded-lg
-        bg-gray-50
-         md:space-x-8 
-        rtl:space-x-reverse
-        md:flex-row 
-        md:mt-0
-        md:border-0
-        md:bg-white">
+            flex flex-col p-4 md:p-0 mt-4 
+            font-medium 
+            md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 
+            bg-transparent md:bg-transparent /* Aseguramos transparencia */
+            border-0 /* Quitamos bordes */
+          ">
+            
             <li>
-              {/* CAMBIO 4: Colores de enlaces activos */}
-              <a href="#" className="
-              block py-2 px-3
-              text-white bg-blue-700
-              rounded-md
-              md:bg-transparent
-              md:text-blue-700
-              md:p-0"
-              aria-current="page">Home</a>
+              <a href="#" className="block py-2 px-3 text-white rounded-md md:bg-transparent md:text-blue-400 md:p-0" aria-current="page">
+                Home
+              </a>
             </li>
+
             <li>
-              <a href="#" className="
-              block py-2 px-3 
-              text-gray-900
-              rounded-md 
-              hover:bg-gray-100
-              md:hover:bg-transparent
-              md:hover:text-blue-700
-              md:p-0">Sobre nosotros</a>
+              <a href="#" className="block py-2 px-3 text-white rounded-md hover:text-blue-300 md:hover:bg-transparent md:p-0 transition-colors">
+                Sobre nosotros
+              </a>
             </li>
+
             <li>
-              <a href="#" className="
-              block py-2 px-3
-              text-gray-900 
-              rounded-md 
-              hover:bg-gray-100
-              md:hover:bg-transparent
-              md:hover:text-blue-700
-              md:p-0">Tienda</a>
+              <a href="#" className="block py-2 px-3 text-white rounded-md hover:text-blue-300 md:hover:bg-transparent md:p-0 transition-colors">
+                Tienda
+              </a>
             </li>
+
             <li>
-              <a href="#" className="
-              block py-2 px-3 
-              text-gray-900
-              rounded-md
-              hover:bg-gray-100
-              md:hover:bg-transparent
-              md:hover:text-blue-700
-              md:p-0">Kits</a>
+              <a href="#" className="block py-2 px-3 text-white rounded-md hover:text-blue-300 md:hover:bg-transparent md:p-0 transition-colors">
+                Kits
+              </a>
             </li>
+
             <li>
-              <a href="#" className="
-              block py-2 px-3 
-              text-gray-900
-              rounded-md 
-              hover:bg-gray-100
-              md:hover:bg-transparent
-              md:hover:text-blue-700
-              md:p-0">Contactanos</a>
+              <a href="#" className="block py-2 px-3 text-white rounded-md hover:text-blue-300 md:hover:bg-transparent md:p-0 transition-colors">
+                Contactanos
+              </a>
             </li>
-            <li>
-              <a href="#" className="
-              block py-2 px-3 
-              text-gray-900
-              rounded-md 
-              hover:bg-gray-100
-              md:hover:bg-transparent
-              md:hover:text-blue-700
-              md:p-0">About</a>
-            </li>
+
           </ul>
         </div>
+
       </div>
     </nav>
   );

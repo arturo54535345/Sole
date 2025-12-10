@@ -1,18 +1,23 @@
-// 1. Importamos el Navbar que acabamos de crear
-import Navbar from './components/shared/Navbar.tsx';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/shared/Navbar';
+import Home from './pages/Home/Home';
 
 function App() {
   return (
-    <div className="">
-    <div>
-      {/* 2. Aquí colocamos el Navbar */}
-      <Navbar />
-
-      {/* 3. Contenido de prueba */}
-      <div className="pt-24 px-4"> 
+    <Router>
+      <div className="relative">
+        {/* El Navbar va FUERA de las rutas para que salga en TODAS las páginas */}
+        <Navbar />
+        
+        <Routes>
+          {/* Cuando la ruta sea "/", mostramos el Home */}
+          <Route path="/" element={<Home />} />
+          
+          {/* Aquí pondremos las demás rutas en el futuro */}
+          {/* <Route path="/about" element={<About />} /> */}
+        </Routes>
       </div>
-    </div>
-    </div>
+    </Router>
   );
 }
 

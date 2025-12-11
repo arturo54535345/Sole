@@ -5,8 +5,7 @@ const HeroSection = () => {
   const navigate = useNavigate();
 
   return (
-   
-    <section className="relative h-screen w-full flex items-center justify-center text-center">
+    <section className="relative h-screen w-full flex items-center justify-center text-center ">
       
       {/* 1. IMAGEN DE FONDO */}
       <div 

@@ -1,6 +1,7 @@
 import React from 'react';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
+import KitsSection from './components/KitsPreview';
 
 
 const Home = () => {
@@ -14,8 +15,8 @@ const Home = () => {
       
       <AboutSection/>
 
-      {/* 3. Próximamente: Kits Preview */}
-      {/* <KitsPreview /> */}
+
+      <KitsSection/>
 
     </div>
   );

@@ -1,198 +1,268 @@
 "use client";
-
 import React from "react";
 import { ReviewsCarousel } from "../../../components/ui/ReviewsCarousel";
-
-//he separado el contenido para poder editar el texto sin necesidad de tocar el diseño asi es mas limpio y rapido
-
-const CONTENT = {
-  tag: "Sobre Nosotros",
-  title: {
-    start: "Tu compañero fiel en el",
-    highlight: "Camino",
-    end: ".",
-  },
-  paragraphs: [
-    "En Sole, no somos solo una tienda; somos peregrinos. Entendemos que cada gramo cuenta y que el Camino no se camina con los pies, sino con el alma.",
-    "Nuestra misión es equiparte con lo esencial, ligero y resistente, para que tu única preocupación sea disfrutar de los paisajes y la experiencia espiritual.",
-  ],
-  buttonText: "Nuestra Historia",
-  routes: {
-    about: "/about",
-  },
-};
-
-//  COMPONENTE PRINCIPAL
+import { IconMountain, IconCompass, IconLeaf } from "@tabler/icons-react";
 
 export function AboutSection() {
-  // LÓGICA DE este componente
-  const handleNavigation = () => {
-    window.location.href = CONTENT.routes.about;
-  };
-
   return (
     <section
       className="
-        w-full 
-        py-12 
-        px-4 
-        md:px-6 
-        bg-white
-      "
+      w-full
+      px-4
+      md:px-6
+      pb-20
+      bg-[#EBECE2]"
     >
-      {/* CONTENEDOR PRINCIPAL esta es la tarjeta verde, se usa flex-row y flex-col este es para moviles*/}
+      {/* CONTENEDOR PRINCIPAL */}
       <div
         className="
-          relative 
-          w-full 
-          bg-[#333D29] 
-          rounded-[2.5rem] 
-          overflow-hidden 
-          shadow-2xl 
-          flex 
-          flex-col 
-          lg:flex-row 
-          items-center 
-          min-h-[500px]
-        "
+        relative
+        w-full
+        bg-[#333D29]
+        rounded-[2.5rem]
+        overflow-hidden
+        flex
+        flex-col
+        lg:flex-row
+        min-h-[750px]
+        shadow-2xl"
       >
-        {/* 
-            COLUMNA IZQUIERDA: aqui esta el contenido y texto  */}
+        {/* 1. TEXTURA TOPOGRÁFICA DE FONDO (El toque "Montaña") */}
         <div
           className="
-            w-full 
-            lg:w-1/2 
-            p-10 
-            md:p-16 
-            relative 
-            z-10
-          "
-        >
-          {/* ETIQUETA SUPERIOR sobre nostros en pequeño */}
-          <span
-            className="
-              text-[#B6AD90] 
-              font-bold 
-              tracking-[0.2em] 
-              text-sm 
-              uppercase 
-              mb-4 
-              block
-            "
-          >
-            {CONTENT.tag}
-          </span>
+          absolute
+          inset-0
+          opacity-10
+          pointer-events-none
+          mix-blend-soft-light"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23B6AD90' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+          }}
+        />
 
-          {/* TÍTULO PRINCIPAL */}
-          <h2
+        {/* COLUMNA IZQUIERDA: CONTENIDO */}
+        <div
+          className="
+          relative
+          z-10
+          w-full
+          lg:w-1/2
+          p-10
+          md:p-16
+          flex
+          flex-col
+          justify-center"
+        >
+          {/* TAG */}
+          <div
             className="
-              text-4xl 
-              md:text-5xl 
-              lg:text-6xl 
-              font-extrabold 
-              text-[#F0FDF4] 
-              leading-tight 
-              mb-6
-            "
+            flex
+            items-center
+            gap-3
+            mb-8"
           >
-            {CONTENT.title.start}{" "}
             <span
               className="
-                text-[#656D4A] 
-                italic
-              "
+              h-[1px]
+              w-8
+              bg-[#B6AD90]"
+            />
+            <span
+              className="
+              text-[#B6AD90]
+              font-bold
+              tracking-[0.2em]
+              text-xs
+              uppercase"
             >
-              {CONTENT.title.highlight}
+              Espíritu Alpino
             </span>
-            {CONTENT.title.end}
-          </h2>
-
-          {/* TEXTO DEBAJO DEL TITULO */}
-          <div
-            className="
-              text-gray-300 
-              text-lg 
-              space-y-6 
-              leading-relaxed
-            "
-          >
-            {CONTENT.paragraphs.map((paragraph, index) => (
-              <p key={index}>
-                {/* Renderizo cada parrafo directamente  */}
-                {index === 0 ? (
-                  <>
-                    En <strong>Sole</strong>, {paragraph.substring(9)}
-                  </>
-                ) : (
-                  paragraph
-                )}
-              </p>
-            ))}
           </div>
 
-          {/* BOTÓN  */}
-          <button
-            onClick={handleNavigation}
+          {/* TITULO */}
+          <h2
             className="
-              mt-8 
-              px-10 
-              py-4 
-              bg-[#B6AD90] 
-              text-[#333D29] 
-              font-bold 
-              rounded-full 
-              hover:bg-[#C2C5AA] 
-              transition-all 
-              transform 
-              hover:scale-105 
-              shadow-lg
-            "
+            text-4xl
+            md:text-5xl
+            lg:text-6xl
+            font-bold
+            text-[#F0FDF4]
+            leading-tight
+            mb-8"
           >
-            {CONTENT.buttonText}
-          </button>
+            Nacido en la <br />
+            <span
+              className="
+              text-[#B6AD90]
+              italic
+              font-serif"
+            >
+              Montaña.
+            </span>
+          </h2>
+
+          {/* DESCRIPCIÓN */}
+          <p
+            className="
+            text-[#EBECE2]/80
+            text-lg
+            font-light
+            leading-relaxed
+            max-w-md
+            mb-12"
+          >
+            Entendemos que la montaña no perdona el peso extra. Diseñamos equipo
+            técnico que respeta la naturaleza y tu espalda, para que solo te
+            preocupes de la cima.
+          </p>
+
+          {/* 2. GRID DE ICONOS (Rellena el espacio vacío con valor) */}
+          <div
+            className="
+            grid
+            grid-cols-1
+            sm:grid-cols-3
+            gap-6
+            mb-12
+            border-t
+            border-white/10
+            pt-8"
+          >
+            {/* Feature 1 */}
+            <div className="space-y-2">
+              <IconMountain className="text-[#B6AD90]" size={28} stroke={1.5} />
+              <h4 className="text-white font-bold text-sm uppercase tracking-wide">
+                Resistencia
+              </h4>
+            </div>
+            {/* Feature 2 */}
+            <div className="space-y-2">
+              <IconLeaf className="text-[#B6AD90]" size={28} stroke={1.5} />
+              <h4 className="text-white font-bold text-sm uppercase tracking-wide">
+                Sostenible
+              </h4>
+            </div>
+            {/* Feature 3 */}
+            <div className="space-y-2">
+              <IconCompass className="text-[#B6AD90]" size={28} stroke={1.5} />
+              <h4 className="text-white font-bold text-sm uppercase tracking-wide">
+                Técnico
+              </h4>
+            </div>
+          </div>
+
+          {/* BOTÓN (Mismo estilo que te gusta) */}
+          <div>
+            <button
+              className="
+              group
+              relative
+              px-10
+              py-4
+              bg-transparent
+              border
+              border-[#B6AD90]
+              text-[#B6AD90]
+              font-bold
+              text-sm
+              uppercase
+              tracking-widest
+              rounded-full
+              overflow-hidden
+              transition-all
+              duration-300"
+            >
+              <span
+                className="
+                absolute
+                inset-0
+                w-full
+                h-full
+                bg-[#B6AD90]
+                transform
+                scale-x-0
+                origin-left
+                transition-transform
+                duration-300
+                group-hover:scale-x-100"
+              />
+              <span
+                className="
+                relative
+                z-10
+                group-hover:text-[#333D29]"
+              >
+                Nuestra Historia
+              </span>
+            </button>
+          </div>
         </div>
 
-        {/*
-            COLUMNA DERECHA: CARRUSEL*/}
+        {/* COLUMNA DERECHA: CARRUSEL */}
         <div
           className="
-            w-full 
-            lg:w-1/2 
-            h-full 
-            relative 
-            min-h-[350px] 
-            lg:min-h-full 
-            flex 
-            items-center 
-            justify-center 
-            overflow-hidden
-          "
+          w-full
+          lg:w-1/2
+          relative
+          bg-[#2a3322]
+          min-h-[500px]"
         >
-          {/* EL CONECTOR MÁGICO (GRADIENTE) creo una fusion para que no se vea brusco la separacion entre el color verde y el contendor del carrusel */}
+          {/* Carrusel */}
           <div
             className="
-              absolute 
-              inset-y-0 
-              left-0 
-              w-24 
-              md:w-40 
-              z-20 
-              bg-gradient-to-r 
-              from-[#333D29] 
-              to-transparent 
-              pointer-events-none
-            "
-          />
-
-          {/* COMPONENTE CARRUSEL */}
-          <div
-            className="
-              w-full 
-              relative 
-              z-0
-            "
+            absolute
+            inset-0
+            flex
+            items-center
+            justify-center
+            opacity-90
+            mix-blend-lighten"
           >
             <ReviewsCarousel />
+          </div>
+
+          {/* Degradado de unión */}
+          <div
+            className="
+            absolute
+            inset-y-0
+            left-0
+            w-32
+            bg-gradient-to-r
+            from-[#333D29]
+            to-transparent
+            z-10
+            pointer-events-none"
+          />
+
+          {/* 3. INSIGNIA FLOTANTE (Detalle Premium) */}
+          <div
+            className="
+            absolute
+            bottom-8
+            right-8
+            z-20
+            bg-white/10
+            backdrop-blur-md
+            border
+            border-white/20
+            p-4
+            rounded-2xl
+            max-w-[180px]
+            hidden
+            md:block"
+          >
+            <div className="flex items-center gap-2 mb-2">
+              <div className="bg-[#B6AD90] p-1 rounded-full text-[#333D29]">
+                <IconMountain size={14} />
+              </div>
+              <span className="text-[10px] font-bold text-white uppercase tracking-wider">
+                Certificado
+              </span>
+            </div>
+            <p className="text-[#EBECE2] text-xs font-serif italic leading-tight">
+              "El equipo que resiste donde otros fallan."
+            </p>
           </div>
         </div>
       </div>

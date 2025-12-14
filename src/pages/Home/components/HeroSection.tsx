@@ -180,7 +180,7 @@ const HeroSection = () => {
             <span className="z-10 group-hover/btn:-translate-y-2 transition-transform duration-300">
               Ver Kits
             </span>
-          5</button>
+          </button>
         </div>
       </div>
     </section>

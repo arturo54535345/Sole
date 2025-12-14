@@ -13,6 +13,7 @@ export function ReviewsCarousel() {
     </div>
   );
 }
+{/*IMAGENES DEL CARRUSEL*/}
 
 const imagenesDelCamino = [
   {
